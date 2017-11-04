@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments/fragment :: header">
+       
+    </head>
+    <body>
+        <h1>All Courses</h1>
+        
+        <table id = "tableview" class="display" cellspacing="0" width="100%">
+			<thead>
+			  <tr>
+			  	<th>No</th>
+			  	<th>ID</th>
+			  	<th>Name</th>
+			  	<th>Credit</th>
+			  </tr>
+			</thead>
+			<tbody th:each="course, iterationStatus: ${courses}" th:class="${iterationStatus.odd}? 'odd'">
+			 <tr>
+			 	<td th:text="${iterationStatus.count}">No. 1</td>
+			 	<td th:text="${course.idCourse}">ID</td>
+			 	<td th:text="${course.name}">Name</td>
+			 	<td th:text="${course.credits}">Credits</td>
+			 </tr>
+			</tbody>        
+        </table>
+    
+    </body>
+</html>

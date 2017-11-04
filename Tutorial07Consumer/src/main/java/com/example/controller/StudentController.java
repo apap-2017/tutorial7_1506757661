@@ -105,6 +105,14 @@ public class StudentController
             return "course-not-found";
         }
     }    
+    
+    @RequestMapping("/course/viewall")
+    public String courseview (Model model)
+    {
+        List<CourseModel> courses = studentDAO.selectAllCourses ();
+        model.addAttribute ("courses", courses);
+        return "courseviewall";
+    }
 
 
     @RequestMapping("/student/viewall")

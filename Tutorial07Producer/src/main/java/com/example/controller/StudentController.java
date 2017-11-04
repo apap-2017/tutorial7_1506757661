@@ -101,7 +101,6 @@ public class StudentController
     {
         List<StudentModel> students = studentDAO.selectAllStudents ();
         model.addAttribute ("students", students);
-
         return "viewall";
     }
     
@@ -110,7 +109,6 @@ public class StudentController
     {
         List<CourseModel> courses = studentDAO.selectAllCourses ();
         model.addAttribute ("courses", courses);
-
         return "courseviewall";
     }
 
